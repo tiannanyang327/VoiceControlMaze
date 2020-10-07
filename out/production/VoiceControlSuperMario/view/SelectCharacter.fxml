@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SelectCharacter">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="92.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="173.0" layoutY="31.0" text="Select Your Character">
+               <font>
+                  <Font name="Montserrat Medium" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="95.0" prefHeight="178.0" prefWidth="600.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0">
+               <graphic>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../6UPS/0Course/2Java/Ball_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="131.0" layoutY="49.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0">
+               <graphic>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../6UPS/0Course/2Java/Ball_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="122.0" layoutY="49.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0">
+               <graphic>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../6UPS/0Course/2Java/Ball_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="294.0" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <TextField prefHeight="27.0" prefWidth="241.0" promptText="Please name your character here... ">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" text="SUBMIT" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
