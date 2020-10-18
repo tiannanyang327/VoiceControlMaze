@@ -1,55 +1,70 @@
 package model;
 
 import javafx.scene.layout.Pane;
+import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapModel extends Pane {
-    public static int rows = 20;
-    public static int columns = 20;
-    public static int boxSize = 40;
 
-    public static int map[][] = new int [columns][rows];
-    public String filename;
+    public List<String> list = new ArrayList<>();
+    public int[][] map = null;
 
-    public MapModel(String filename) {
-        this.filename = filename;
-        loadMap(filename);
-    }
-    public void loadMap(String filename){
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(filename));
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
+//    @Test
+//    public void testResults(String mapName) throws IOException {
+//        int[][] result = readMap(mapName);
+//        for(int i=0; i < result.length; i++){
+//            for (int j=0; j < result[i].length; j++){
+//                System.out.print(result[i][j]+" ");
+//            }
+//            System.out.println();
+//
+//        }
+//    }
 
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
+    public int[][] readMap(String mapName) throws IOException {
+        FileInputStream fis = new FileInputStream(mapName);
+        InputStreamReader isr = new InputStreamReader(fis);
+        BufferedReader br = new BufferedReader(isr);
+        //value is the number of rows
+        String rowValue = br.readLine();
 
-            }
-            String mapStr = sb.toString();
 
-            int counter = 0;
-            for(int y = 0; y < columns; y++){
-                for(int x = 0; x < rows; x++){
-                    String mapChar = mapStr.substring(counter, counter+1);
-                    if(!mapChar.equals("\r\n") && !mapChar.equals("\n")&& !mapChar.equals("\r")){//If it's a number
-//                        System.out.print(mapChar);
-                        map[x][y] = Integer.parseInt(mapChar);
-                    }else{//If it is a line break
-                        x--;//
-                        System.out.print(mapChar);
-                    }
-                    counter++;
-                }
-            }
-        }catch(Exception e){
-            System.out.println("Unable to load existing map(if exists), creating new map.");
+        while(rowValue != null){
+            list.add(rowValue);
+            rowValue = br.readLine();
+
         }
+        br.close();
+
+
+        int row = list.size();
+        int column = 0;
+
+        for (int i = 0; i < 1; i++){
+            String str = list.get(i);
+            String[] columnValue = str.split(",");
+
+            column = columnValue.length;
+        }
+
+        map = new int[row][column];
+
+        for(int i = 0; i < row; i++){
+            //the values of a row
+            String str = list.get(i);
+            //the value of a column
+            String[] values = str.split(",");
+            for (int j=0; j < values.length; j++){
+                map[i][j] = Integer.parseInt(values[j]);
+            }
+        }
+        return map;
     }
-    public int[][] getMap() {
-        return this.map;
-    }
+//    public int[][] getMap(){
+//        return this.map;
+//    }
 }
+//Reference:
