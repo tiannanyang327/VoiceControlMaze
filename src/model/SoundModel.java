@@ -21,7 +21,7 @@ public class SoundModel {
         return format;
 	}
 	//get the sound amplitude
-	public static float getVolume() {		
+	public static float getVolume() {	
 		
         return volume;
         
