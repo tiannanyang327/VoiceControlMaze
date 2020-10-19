@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -31,16 +32,13 @@ public class SoundController extends AnimationTimer {
 			//shout to start
 			if(vol > 0.03) {
 				
+				System.out.print("Voice Detected: Shout to Start");
 				//Button btn = view.SelectCharacterView.btnnext;
 				view.SelectCharacterView.btnnext.setDisable(false);
 				//view.SelectCharacterView.btnnext.setStyle("-fx-background-color: #FFA23D;");
 				
-				//DropShadow dropShadow = new DropShadow();
-				//dropShadow.setRadius(5.0);
-				//dropShadow.setOffsetX(3.0);
-				//dropShadow.setOffsetY(3.0);
-				//dropShadow.setColor(Color.color(0.4, 0.5, 0.5));
-				//view.SelectLevelView.shout.setEffect(dropShadow);
+				
+				//view.SelectLevelView.shout.setEffect(new GaussianBlur());
 				
 				try {
 					Thread.sleep(2000);
