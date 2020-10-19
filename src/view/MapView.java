@@ -19,6 +19,7 @@ public class MapView extends Pane {
     public MapView(String filename) {
         mapPane = new Pane();
         this.getChildren().add(mapPane);
+        this.setId("map-view");
 
         mapModel = new MapModel(filename);
         setVisible(true);
