@@ -2,6 +2,7 @@ package controller;
 
 import java.util.HashMap;
 
+import application.App;
 import javafx.animation.AnimationTimer;
 import javafx.event.Event;
 import javafx.scene.Node;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import view.MapView;
@@ -23,7 +25,7 @@ public class SoundController extends AnimationTimer {
 		
 		
 		//frequently get the amplitude
-		vol = model.SoundModel.getVolume();		
+		vol = model.SoundModel.getVolume();	
 		
 		//sound range: 0.01-0.6		
 		
@@ -48,14 +50,17 @@ public class SoundController extends AnimationTimer {
 				}
 				
 				//switch scene
-				MapView mapView = new MapView("src/Beginner.txt");
+				//TODO
+				App app = new App(this.mapNum,this.characterNum);
+		        Pane mapView = new Pane();
+		        mapView.getChildren().add(app);
 				sample.Main.root.getChildren().add(mapView);
 			}
 		}
 		
 		/*
 		//map view
-		if(root.lookup("#map-view").isVisible()) {
+		if(sample.Main.root.lookup("#map-view").isVisible()) {
 			
 			Double x =  20.0; //horizontal movement
 			Double y = 20.0; //vertical movement
