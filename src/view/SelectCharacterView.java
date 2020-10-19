@@ -42,24 +42,20 @@ public class SelectCharacterView extends FlowPane{
         char2.setStyle("-fx-background-color: #00426C; ");
         char3.setPrefSize(150,150);
         char3.setStyle("-fx-background-color: #00426C; ");
-        
-        char1.setToggleGroup(charGroup);
-        char2.setToggleGroup(charGroup);
-        char3.setToggleGroup(charGroup);
 
-        Image imgpig1 = new Image("img/G1.png");
+        Image imgpig1 = new Image("img/G0.png");
         ImageView viewpig1 = new ImageView(imgpig1);
         viewpig1.setFitHeight(100);
         viewpig1.setPreserveRatio(true);
         char1.setGraphic(viewpig1);
 
-        Image imgpig2 = new Image("img/G2.png");
+        Image imgpig2 = new Image("img/G1.png");
         ImageView viewpig2 = new ImageView(imgpig2);
         viewpig2.setFitHeight(100);
         viewpig2.setPreserveRatio(true);
         char2.setGraphic(viewpig2);
 
-        Image imgpig3 = new Image("img/G3.png");
+        Image imgpig3 = new Image("img/G2.png");
         ImageView viewpig3 = new ImageView(imgpig3);
         viewpig3.setFitHeight(100);
         viewpig3.setPreserveRatio(true);
@@ -102,3 +98,4 @@ public class SelectCharacterView extends FlowPane{
         this.setId("select-char-view");
     }
 }
+
