@@ -10,6 +10,8 @@ import view.SelectLevelView;
 
 import java.io.IOException;
 
+import controller.SoundController;
+
 public class Main extends Application {
 	
 	public static StackPane root;
@@ -18,16 +20,18 @@ public class Main extends Application {
     public int mapNum;
 
     public static void main(String[] args) {
+    	controller.CaptureSoundController.main(args);
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
     	
+    	SoundController timer = new SoundController();
+    	
     	root = new StackPane();
     	root.setPrefSize(800, 800);
-    	Scene scene = new Scene(root);
-    	
+    	Scene scene = new Scene(root);    	
     	
     	
         System.out.println("main:"+this.characterNum);
@@ -46,10 +50,12 @@ public class Main extends Application {
 
         scv.btnnext.setOnMouseClicked( e-> {
         	root.getChildren().add(slv);
+        	timer.start();
         	});
         //slv.btnnext.setOnMouseClicked( e-> primaryStage.setScene(MapScene));
         slv.previous.setOnMouseClicked(e-> {
         	root.getChildren().add(scv);
+        	timer.stop();
         	});
         app.exitBtn.setOnMouseClicked(e -> {
         	root.getChildren().add(slv);
