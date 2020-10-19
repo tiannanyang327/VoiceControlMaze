@@ -50,16 +50,17 @@ public class SoundController extends AnimationTimer {
 				}
 				
 				//switch scene
-				//TODO
+				//TODO Please help to implement mapView
 				App app = new App(this.mapNum,this.characterNum);
 		        Pane mapView = new Pane();
 		        mapView.getChildren().add(app);
-				sample.Main.root.getChildren().add(mapView);
+				application.Main.root.getChildren().add(mapView);
 			}
 		}
 		
 		/*
 		//map view
+		// TODO need to merge
 		if(application.Main.root.lookup("#map-view").isVisible()) {
 			
 			Double x =  20.0; //horizontal movement
