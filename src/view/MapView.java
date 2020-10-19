@@ -23,7 +23,7 @@ public class MapView extends BorderPane {
     public AnchorPane mazeView;
     public Label timer;
     public CharacterView pig;
-    public MapModel newMap;
+    public MapModel newMap;    
 
     public MapView(int mapNum,int characterNum) throws IOException {
         newMap = new MapModel();
@@ -32,6 +32,7 @@ public class MapView extends BorderPane {
         pig = new CharacterView(characterNum);
 
         root = new BorderPane();
+        root.setId("map-view");
 
         exitBtn = new Button("Exit Game");
         exitBtn.setLayoutX(300);

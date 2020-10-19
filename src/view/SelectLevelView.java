@@ -6,6 +6,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -21,7 +22,7 @@ public class SelectLevelView extends FlowPane {
     public Button lev1= new Button("Beginner");;
     public Button lev2= new Button("Intermediate");;
     public Button lev3= new Button("Expert");;
-    public Button shout= new Button("SHOUT TO START");
+    public static Label shout;
     public Button previous;
 
 
@@ -33,6 +34,8 @@ public class SelectLevelView extends FlowPane {
     public SelectLevelView() {
         //previous = new Button();
         //btnnext = new Button();
+    	
+    	shout = new Label("SHOUT TO START");
 
         lev1.setPrefSize(300,40);
         lev2.setPrefSize(300,40);
@@ -60,16 +63,19 @@ public class SelectLevelView extends FlowPane {
 
 
         btnnext = new Button("Next");
+        btnnext.setDisable(true);
         btnnext.setFont(Font.font("Arial", FontWeight.BOLD, 15));
-        btnnext.setStyle("-fx-background-color: #FFA23D; ");
+        //btnnext.setStyle("-fx-background-color: darkgrey; ");
         btnnext.setTextFill(Color.WHITE);
         btnnext.setPrefWidth(150);
+        btnnext.setId("btn-next");
 
         previous = new Button("Previous");
         previous.setFont(Font.font("Arial", FontWeight.BOLD, 15));
         previous.setStyle("-fx-background-color: #FFA23D; ");
         previous.setTextFill(Color.WHITE);
         previous.setPrefWidth(150);
+        previous.setId("btn-prev");
 
 
         paneTitle.getChildren().add(LevTitle);
@@ -84,6 +90,7 @@ public class SelectLevelView extends FlowPane {
 
         this.getChildren().addAll(paneTitle,paneLevel,paneShout,paneControl);
         this.setStyle("-fx-background-color: #00426C");
+        this.setId("level-view");
 
     }
 }

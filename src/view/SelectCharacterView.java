@@ -3,6 +3,8 @@ package view;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -14,11 +16,12 @@ import javafx.scene.text.Text;
 
 public class SelectCharacterView extends FlowPane{
 
-    public Button btnnext = new Button("Next");
+    public static Button btnnext;
     public Text CharTitle;
-    public Button char1= new Button();
-    public Button char2= new Button();
-    public Button char3= new Button();
+    public ToggleGroup charGroup = new ToggleGroup();
+    public ToggleButton char1= new ToggleButton();
+    public ToggleButton char2= new ToggleButton();
+    public ToggleButton char3= new ToggleButton();
     public Button submit= new Button("SUBMIT");
     public TextField textname;
 
@@ -67,11 +70,12 @@ public class SelectCharacterView extends FlowPane{
         textname = new TextField("Enter your character name here");
         textname.setPrefWidth(400);
 
-        //btnnext = new Button("Next");
+        btnnext = new Button("Next");
         btnnext.setFont(Font.font("Arial", FontWeight.BOLD, 15));
         btnnext.setStyle("-fx-background-color: #FFA23D; ");
         btnnext.setTextFill(Color.WHITE);
         btnnext.setPrefWidth(100);
+        btnnext.setId("btn-next");
 
         paneTitle.getChildren().add(CharTitle);
         paneChar.getChildren().addAll(char1,char2,char3);
@@ -91,6 +95,7 @@ public class SelectCharacterView extends FlowPane{
         this.getChildren().add(paneEnter);
         this.getChildren().add(paneNext);
         this.setStyle("-fx-background-color: #00426C");
+        this.setId("select-char-view");
     }
 }
 
