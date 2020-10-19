@@ -30,7 +30,7 @@ public class SoundController extends AnimationTimer {
 		//sound range: 0.01-0.6		
 		
 		//initial view
-		if(sample.Main.root.lookup("#level-view").isVisible()) {			
+		if(application.Main.root.lookup("#level-view").isVisible()) {			
 			//shout to start
 			if(vol > 0.03) {
 				
@@ -60,7 +60,7 @@ public class SoundController extends AnimationTimer {
 		
 		/*
 		//map view
-		if(sample.Main.root.lookup("#map-view").isVisible()) {
+		if(application.Main.root.lookup("#map-view").isVisible()) {
 			
 			Double x =  20.0; //horizontal movement
 			Double y = 20.0; //vertical movement
